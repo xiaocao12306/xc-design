@@ -1,0 +1,82 @@
+// 变量定义
+// 基础颜色
+$white: #fff !default;
+$gray-100: #ebeee8 !default;
+$gray-200: #ebeddf !default;
+$gray-300: #e0e0d0 !default;
+$gray-500: #c7c6b6 !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$primary-light: #d3ebe7;
+$brown-100: #d2af9d;
+$brown-200: #bc836b;
+$brown-300: #b26d5d;
+$brown-400: #9a6655;
+$orange: #ea5514;
+$orange-dark: #d23918;
+$red: #c8161d;
+$red-dark: #a72126;
+
+$blue: #3271ae;
+$green: #007175;
+$green-gray: #284852;
+$blue-dark: #12264f;
+
+// 字体系统
+$primary: $blue;
+$secondary: $gray-600;
+
+// tag
+$tag-error: $red;
+$tag-primary: $blue;
+$tag-warning: $orange;
+
+$font-size-base: 1rem !default;
+$font-size-lg: $font-size-base * 1.25 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+
+$font-weight-lighter: lighter !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-bold: 700 !default;
+$font-weight-bolder: bolder !default;
+$font-weight-base: $font-weight-normal !default;
+
+$line-height-base: 1.5 !default;
+$line-height-lg: 2 !default;
+$line-height-sm: 1.25 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$link-color: $primary !default;
+$line-decoration :none !default;
+$link-hover-color: darken($link-color, 15%) !default;
+$link-hover-deoration: underline !default;
+
+$body-bg:$white !default;
+$body-color:$gray-900 !default;
+$body-text-align: null !default;
+$border-width: 1px !default;
+$border-color:$gray-500;
+
+// menu
+$menu-border-width: $border-width !default;
+$menu-border-color: $border-color !default;
+
+$menu-transition: color .15s ease-in-out,border-color .15 ease-in-out;
+
+// menu-item
+$menu-item-padding-y: .5rem !default;
+$menu-item-padding-x:1rem !default;
+$menu-item-active-color: $primary !default;
+$menu-item-active-border-width:2px !default;
+$menu-item-disabled-color: $gray-600 !default;
