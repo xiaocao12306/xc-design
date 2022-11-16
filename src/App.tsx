@@ -2,13 +2,16 @@ import React from 'react'
 import Button, { ButtonType, ButtonSize } from './components/Button'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
 function App() {
   return (
     <div className="App">
-      <Menu defaultIndex={0} mode='vertical'>
-        <MenuItem index={0}>menu-1</MenuItem>
-        <MenuItem index={1} disabled>menu-2-disabled</MenuItem>
-        <MenuItem index={2}>menu-3</MenuItem>
+      <Menu defaultIndex={'0'} mode='vertical' defaultOpenSubMenus={['2']}>
+        <MenuItem>menu-1</MenuItem>
+        <MenuItem disabled>menu-2-disabled</MenuItem>
+        <SubMenu title='sub-menu'>
+          <MenuItem>sub-menu-1</MenuItem>
+        </SubMenu>
       </Menu>
 
       <Button>Default</Button>
@@ -19,7 +22,7 @@ function App() {
       <Button size={ButtonSize.Small}>Small</Button>
       <Button
         btnType={ButtonType.Link}
-        href="https://lixis.cn"
+        href="https://lixiscao.cn"
         size={ButtonSize.Large}
       >
         Hello
@@ -27,7 +30,7 @@ function App() {
       <Button
         btnType={ButtonType.Link}
         disabled
-        href="https://lixis.cn"
+        href="https://lixiscao.cn"
         size={ButtonSize.Large}
       >
         Hello
