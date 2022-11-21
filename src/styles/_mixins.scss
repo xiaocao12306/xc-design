@@ -27,3 +27,9 @@
 	}
 	
 }
+
+@mixin alert-style($background,$border) {
+	background: rgba($background,0.2);
+	border-color: $background;
+	color: #333;
+}

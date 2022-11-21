@@ -16,13 +16,13 @@ $brown-100: #d2af9d;
 $brown-200: #bc836b;
 $brown-300: #b26d5d;
 $brown-400: #9a6655;
-$orange: #ea5514;
-$orange-dark: #d23918;
-$red: #c8161d;
+$orange: #ecd452;
+$orange-dark: #b6a014;
+$red: #e94829;
 $red-dark: #a72126;
 
 $blue: #3271ae;
-$green: #007175;
+$green: #779649;
 $green-gray: #284852;
 $blue-dark: #12264f;
 
@@ -67,7 +67,9 @@ $body-color:$gray-900 !default;
 $body-text-align: null !default;
 $border-width: 1px !default;
 $border-color:$gray-500;
-
+$border-radius:8px !default;
+$border-radius-sm:4px !default;
+$border-radius-lg:16px !default;
 // menu
 $menu-border-width: $border-width !default;
 $menu-border-color: $border-color !default;
