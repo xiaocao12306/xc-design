@@ -6,8 +6,7 @@
 	@include alert-style($primary,$primary);
 	margin-bottom: 1rem;
 	border-radius: $border-radius-sm;
-	height: auto;
-	opacity: 1;
+	// height: 100px;
 	&-close {
 		position: absolute;
 		right: 0;

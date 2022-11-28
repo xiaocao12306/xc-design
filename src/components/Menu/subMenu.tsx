@@ -15,9 +15,6 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const context = useContext(MenuContext)
 	const opendSubmenus = context.defaultOpenSubMenus as Array<string>
-	console.log('====================================');
-	console.log(index,context);
-	console.log('====================================');
 	const isOpend = (index && context.mode === 'vertical') ? opendSubmenus.includes(index) : false
 	const classes = classNames('menu-item submenu-item', className, {
 		'is-active':context.index === index

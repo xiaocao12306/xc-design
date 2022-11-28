@@ -24,7 +24,7 @@ const Alert: React.FC<AlertProps> = (props) => {
   )
   const titleCls = classNames('xc-alert-title', { [`blod-title`]: description })
 	const handleClose = (e:React.MouseEvent) => {
-		setTimeout(()=>setAlert(false),300)
+		setAlert(false)
     if (onClose) {
       onClose(e)
     }
