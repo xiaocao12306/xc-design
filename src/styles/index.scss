@@ -1,8 +1,14 @@
 @import './var';
 @import './reboot';
 @import './mixins';
+@import './animation';
 @import './functions';
 
 @import '../components/Button/style';
 @import '../components/Menu/style';
 @import '../components/Alert/style';
+@import '../components/Icon/style';
+
+.side{
+	width: 240px;
+}

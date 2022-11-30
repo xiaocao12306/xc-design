@@ -22,14 +22,30 @@ $red: #e94829;
 $red-dark: #a72126;
 
 $blue: #3271ae;
-$green: #779649;
+$green: #4c8045;
 $green-gray: #284852;
 $blue-dark: #12264f;
 
 // 字体系统
-$primary: $blue;
-$secondary: $gray-600;
+$primary: $blue !default;
+$secondary: $gray-600 !default;
+$success:$green;
+$warning:$orange !default;
+$danger:$red !default;
+$info:$blue-dark !default;
+$dark:$gray-800 !default;
+$light:$gray-100 !default;
 
+$theme-colors:(
+	"primary":$primary,
+	"secondary":$secondary,
+	"success":$success,
+	"warning":$warning,
+	"danger":$danger,
+	"info":$info,
+	"white":$white,
+	"light":$light
+);
 // tag
 $tag-error: $red;
 $tag-primary: $blue;

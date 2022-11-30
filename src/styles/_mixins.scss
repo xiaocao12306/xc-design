@@ -33,3 +33,29 @@
 	border-color: $background;
 	color: #333;
 }
+
+@mixin  zoom-animation(
+	$direction:'top',
+	$in:fadeInDown,
+	$out:fadeOutUp,
+	$origin:center top
+) {
+	.zoom-in-#{$direction}-enter{
+		// 刚刚进入动画的时候触发
+		opacity: 0;
+	}
+	.zoom-in-#{$direction}-enter-active{
+		transform-origin:center top;
+		opacity: 1;
+		animation-name: $in;
+		animation-duration: .4s;
+	}
+	.zoom-in-#{$direction}-exit{
+		opacity: 1;
+	}
+	.zoom-in-#{$direction}-exit-active{
+		transform-origin:center top;
+		animation-name: $out;
+		animation-duration:.4s;
+	}
+}

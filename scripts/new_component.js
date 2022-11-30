@@ -15,23 +15,29 @@ const componentPath = path.resolve(__dirname, '../src/components', ComponentName
 const files = [
 	{
 		fileName: 'index.tsx', content: `
-		import React from "react";
-		import classNames from 'classnames'
-		type ${ComponentName}Props = {
-			children: React.ReactNode
-		}
-		export const  ${ComponentName}: React.FC<${ComponentName}Props> = (props) => {
-			const {children} = props
-			return (<>{children}</>)
-		}
+import React from "react";
+import classNames from 'classnames'
+type ${ComponentName}Props = {
+	children: React.ReactNode
+	}
+const  ${ComponentName}: React.FC<${ComponentName}Props> = (props) => {
+	const {children} = props
+	return (<>{children}</>)
+}
+
+export default ${ComponentName}
 		`},
 	{
 		fileName: `${componentName}.test.tsx`, content: `
-			import React from 'react'
-			import { render, RenderResult,fireEvent,cleanup } from '@testing-library/react'
-			import '@testing-library/jest-dom/extend-expect'
-			import ${ComponentName} from '.'
-	`}
+import React from 'react'
+import { render, RenderResult,fireEvent,cleanup } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
+import ${ComponentName} from '.'
+	`},
+	{
+		fileName: '_style.scss',
+		content: `.xc-${componentName} {}`
+	}
 ]
 
 files.forEach((file) => {

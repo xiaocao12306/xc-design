@@ -2,8 +2,9 @@ import classNames from "classnames"
 import React, { FunctionComponentElement, useContext, useState } from "react"
 import { MenuContext } from "./menu"
 import { MenuItemProps } from "./menuItem"
-
-
+import Icon from "../Icon"
+import { CSSTransition } from "react-transition-group"
+import Transition from "../Transition"
 export interface SubMenuProps {
 	index?: string,
 	title: string,
@@ -15,12 +16,13 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
 	// eslint-disable-next-line react-hooks/rules-of-hooks
 	const context = useContext(MenuContext)
 	const opendSubmenus = context.defaultOpenSubMenus as Array<string>
-	const isOpend = (index && context.mode === 'vertical') ? opendSubmenus.includes(index) : false
-	const classes = classNames('menu-item submenu-item', className, {
-		'is-active':context.index === index
+	const menuOpen = (index && context.mode === 'vertical') ? opendSubmenus.includes(index) : false
+	const [isOpen, setOpen] = useState(menuOpen)
+	const classes = classNames('submenu-item', className, {
+		'is-active': context.index === index,
+		'is-open':isOpen,
+		'is-vertical':context.mode === 'vertical'
 	})
-
-	const [isOpen, setOpen] = useState(isOpend)
 	const onClick = () => {
 		setOpen(!isOpen)
 	}
@@ -41,9 +43,7 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
 		onMouseLeave:(e: React.MouseEvent) => { handleMouse(e, false) }
 	} :{}
 	const renderChildren = () => {
-		const submenuClasses = classNames('ex-submenu', {
-			'menu-open':isOpen
-		})
+		const submenuClasses = classNames('xc-submenu')
 		const childComponent = React.Children.map(children, (child, i) => {
 			const childElement = child as FunctionComponentElement<MenuItemProps>
 			if (childElement.type.displayName === 'menu-item') {
@@ -56,13 +56,16 @@ const SubMenu: React.FC<SubMenuProps> = ({ index, title, children, className }) 
 		})
 
 		return (
-			<ul className={submenuClasses}>{childComponent}</ul>
+			<Transition in={isOpen} timeout={300} animation="zoom-in-top">
+				<ul className={submenuClasses}>{childComponent}</ul>
+			</Transition>
 		)
 	}
 	return (
 		<li key={index} className={classes} {...hoverEvents}>
-			<div className="submenu-title" onClick={onClick} {...clickEvents}>
+			<div className="menu-item submenu-title" onClick={onClick} {...clickEvents}>
 				{title}
+				<Icon icon='angle-down'/>
 			</div>
 			{renderChildren()}
 		</li>

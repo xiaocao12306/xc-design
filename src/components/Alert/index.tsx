@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import classNames from 'classnames'
-import anime from 'animejs'
 export type types = 'success' | 'default' | 'danger' | 'warning'
 export type AlertProps = {
   title: string
